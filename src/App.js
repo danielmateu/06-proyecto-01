@@ -1,3 +1,6 @@
+import { Listado } from "./components/Listado";
+import { Buscador } from "./components/Buscador";
+import { Crear } from "./components/Crear";
 
 
 function App() {
@@ -24,94 +27,15 @@ function App() {
         {/*  SECCION  */}
         <section className="content">
             {/*  AQUI VAN LAS PELIS  */}
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-            <article className="peli-item">
-                <h3 className="title">Desarrollo WEb</h3>
-                <p className="description">danielmateu.es</p>
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
+            <Listado/>
             
         </section>
 
         {/*  BARRA LATERA */}
 
         <aside className="lateral">
-            <div className="search">
-                <h3 className="title">Buscador</h3>
-                <form action="">
-                    <input type="text"></input>
-                    <button className="buscar">Buscar</button>
-                </form>
-            </div>
-
-            <div className="add">
-                <h3 className="title">Añadir Pelicula</h3>
-                <form action="">
-                    <input type="text" placeholder="Titulo"></input>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Descripción"></textarea>
-                    <input type="submit" value="Guardar"></input>
-                </form>
-            </div>
+            <Buscador/>
+            <Crear/>
         </aside>
         {/* PIE DE PAGINA */}
         <footer className="footer">
