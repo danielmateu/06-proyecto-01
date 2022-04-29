@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
-export const Crear = () => {
+export const Crear = ({setListadoState}) => {
 
   const tituloComponente = 'Añadir pelicula';
   const [peliState,setPeliState] = useState({
@@ -27,21 +28,25 @@ export const Crear = () => {
       titulo,
       descripcion
     };
-
+    //GUARDAR ESTADO
     setPeliState(peli);
 
-    console.log(peliState);
+    //Actualizar el estado del listado principal
+    setListadoState(elementos=>{
+      return [...elementos,peli];
+    })
+
+    GuardarEnStorage('pelis',peli);
+    
+    // console.log(peliState);
   };
 
-
-
+  
 
   return (
     <div className="add">
       <h3 className="title">{tituloComponente}</h3>
         <strong>{(titulo && descripcion) && `Has creado la película: ${titulo}`}</strong>
-        
-
         <form onSubmit={conseguirDatosForm} action="">
           <input type="text"
                 id='titulo' 
