@@ -4,6 +4,9 @@ import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 export const Crear = ({setListadoState}) => {
 
   const tituloComponente = 'Añadir pelicula';
+
+  //const titulo = 'Añadir película';
+
   const [peliState,setPeliState] = useState({
     titulo: '',
     descripcion: ''
@@ -14,29 +17,32 @@ export const Crear = ({setListadoState}) => {
   const conseguirDatosForm = e =>{
     e.preventDefault();
 
-    //Conseguir datos formulario 
+    //Conseguir datos del formulario 
     let target = e.target;
     let titulo = target.titulo.value;
     let descripcion = target.descripcion.value;
 
-    // alert(`Título:${titulo} Descripción:${descripcion}`)
+    
 
     //Crear objeto de la peli a guardar
-
     let peli = {
       id: new Date().getTime(),
       titulo,
       descripcion
     };
+
+    
     //GUARDAR ESTADO
     setPeliState(peli);
+    
 
     //Actualizar el estado del listado principal
-    setListadoState(elementos=>{
-      return [...elementos,peli];
-    })
+    // setListadoState(elementos=>{
+    //   return [peli,...elementos];
+    // })
 
     GuardarEnStorage('pelis',peli);
+    GuardarEnStorage('copia_datos',peli);
     
     // console.log(peliState);
   };
@@ -45,8 +51,9 @@ export const Crear = ({setListadoState}) => {
 
   return (
     <div className="add">
-      <h3 className="title">{tituloComponente}</h3>
-        <strong>{(titulo && descripcion) && `Has creado la película: ${titulo}`}</strong>
+        <h3 className="tittle">{tituloComponente}</h3>
+        <strong>{(titulo && descripcion) && `Has creado la película: ${titulo}`}
+        </strong>
         <form onSubmit={conseguirDatosForm} action="">
           <input type="text"
                 id='titulo' 
