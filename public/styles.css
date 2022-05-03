@@ -229,7 +229,7 @@ input[type="submit"]:hover{
 
 textarea{
     min-width: 40px;
-    max-width: 164px;
+    max-width: 375px;
     margin-top: 6px;
 }
 
@@ -259,4 +259,30 @@ textarea{
 
 .footer a:hover{
     color:#fff;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background: #a0a0a05e;
+    padding: 8px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+input,textarea{
+    border: none;
+    outline: none;
+}
+
+.titulo_editado{
+    padding: 10px;
+}
+
+.no-encontrado{
+    color: rgb(166, 42, 42);
+    margin-bottom:6px;
 }

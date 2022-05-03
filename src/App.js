@@ -31,15 +31,15 @@ function App() {
         {/*  SECCION  */}
         <section className="content">
             {/*  AQUI VAN LAS PELIS  */}
-            <Listado listadoState={listadoState} setListadoState={setListadoState} />
-            
+            <Listado listadoState={listadoState} setListadoState={setListadoState}/>
         </section>
 
         {/*  BARRA LATERA */}
 
         <aside className="lateral">
-            <Buscador/>
-            <Crear setListadoState={setListadoState}/>
+            <Buscador listadoState={listadoState} setListadoState={setListadoState}/>
+
+            <Crear setListadoState = {setListadoState} />
         </aside>
         {/* PIE DE PAGINA */}
         <footer className="footer">

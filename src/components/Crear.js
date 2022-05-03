@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
+
 export const Crear = ({setListadoState}) => {
 
   const tituloComponente = 'Añadir pelicula';
@@ -16,12 +17,12 @@ export const Crear = ({setListadoState}) => {
 
   const conseguirDatosForm = e =>{
     e.preventDefault();
+    
 
     //Conseguir datos del formulario 
     let target = e.target;
     let titulo = target.titulo.value;
     let descripcion = target.descripcion.value;
-
     
 
     //Crear objeto de la peli a guardar
@@ -30,40 +31,42 @@ export const Crear = ({setListadoState}) => {
       titulo,
       descripcion
     };
+    
 
     
     //GUARDAR ESTADO
     setPeliState(peli);
-    
 
-    //Actualizar el estado del listado principal
-    // setListadoState(elementos=>{
-    //   return [peli,...elementos];
-    // })
+     //Actualizar el estado del listado principal
+    setListadoState(elementos =>{
+      return [...elementos, peli];
+    });
 
-    GuardarEnStorage('pelis',peli);
-    GuardarEnStorage('copia_datos',peli);
-    
-    // console.log(peliState);
+    //Guardar en almacenamiento local 
+    GuardarEnStorage('pelis', peli);
+    // GuardarEnStorage('copia_datos',peli)
+
   };
 
-  
+
 
   return (
     <div className="add">
         <h3 className="tittle">{tituloComponente}</h3>
-        <strong>{(titulo && descripcion) && `Has creado la película: ${titulo}`}
-        </strong>
-        <form onSubmit={conseguirDatosForm} action="">
+        <p>{(titulo && descripcion) && `Has creado la película:`}
+        </p>
+        <h3>{titulo}</h3>
+
+        <form onSubmit={conseguirDatosForm}>
           <input type="text"
                 id='titulo' 
-                name="titulo"
+                name='titulo'
                 placeholder="Titulo"/>
+
           <textarea name="descripcion" 
                     id="descripcion" 
-                    cols="30" 
-                    rows="10" 
                     placeholder="Descripción"/>
+
           <input type="submit"
                 id='save' 
                 value="Guardar"/>
