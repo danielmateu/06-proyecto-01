@@ -173,8 +173,8 @@ input[type="submit"]{
 }
 
 .edit:hover{
-    background: black;
-    color:#fff;
+    background: rgb(224, 237, 50);
+    color:#545454;
 }
 
 .delete:hover{
@@ -182,12 +182,12 @@ input[type="submit"]{
 }
 
 button:hover{
-    background:green;
-    color: black;
+    background:#1e6cc6;
+    color: #b9b9b9;
 }
 
 input[type="submit"]:hover{
-    background:rgb(159, 161, 49);
+    background:rgb(77, 186, 77);
     color: black;
 }
 
